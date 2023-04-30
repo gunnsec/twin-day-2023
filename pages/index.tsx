@@ -15,7 +15,8 @@ export default function Home() {
             </section>
 
             <section className="border-t flex">
-                <aside className="pl-8 pr-10 py-8 sticky top-0 self-start w-[22rem] flex-none">
+                {/* TODO: better responsivity */}
+                <aside className="hidden lg:block pl-8 pr-10 py-8 sticky top-0 self-start w-[22rem] flex-none">
                     <h3 className="font-bold text-lg mb-2">Table of contents</h3>
                     <ul className="list-disc list-outside pl-6 flex flex-col gap-1">
                         {people.map(({name}) => (
@@ -26,7 +27,7 @@ export default function Home() {
                     </ul>
                 </aside>
 
-                <div className="px-10 py-8 flex flex-col gap-10 border-l">
+                <div className="px-10 py-8 flex flex-col gap-10 lg:border-l">
                     {people.map(({name, ...hrefs}) => (
                         <div>
                             <SectionHeader>{name}</SectionHeader>

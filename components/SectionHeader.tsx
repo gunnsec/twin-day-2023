@@ -1,6 +1,7 @@
 import {FiLink} from 'react-icons/fi';
 
 
+// https://github.com/gunnsec/gunn-launchpad/blob/main/components/Section.tsx
 export default function SectionHeader(props: {children: string}) {
     const id = nameToId(props.children);
 
@@ -17,6 +18,11 @@ export default function SectionHeader(props: {children: string}) {
     )
 }
 
+/**
+ * Converts a section name to HTML hash id.
+ * @param name The name to convert.
+ * @returns The converted id.
+ */
 export function nameToId(name: string) {
     return name.toLowerCase().replaceAll(/\s+/g, '-');
 }
