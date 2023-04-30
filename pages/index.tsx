@@ -1,4 +1,6 @@
 import {Inter} from 'next/font/google';
+import SectionHeader, {nameToId} from '@/components/SectionHeader';
+import PictureBoxes from '@/components/PictureBoxes';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -13,19 +15,22 @@ export default function Home() {
             </section>
 
             <section className="border-t flex">
-                <aside className="px-10 py-6 sticky top-0 border-r">
+                <aside className="pl-8 pr-10 py-8 sticky top-0 border-r w-[22rem] flex-none">
                     <h3 className="font-bold text-lg mb-2">Table of contents</h3>
-                    <ul className="list-disc list-inside pl-2">
+                    <ul className="list-disc list-outside pl-6 flex flex-col gap-1">
                         {people.map(({name}) => (
-                            <li>{name}</li>
+                            <li>
+                                <a href={`#${nameToId(name)}`} className="hover:underline">{name}</a>
+                            </li>
                         ))}
                     </ul>
                 </aside>
 
-                <div className="px-10 py-6 flex flex-col gap-8">
-                    {people.map(({name}) => (
+                <div className="px-10 py-8 flex flex-col gap-10">
+                    {people.map(({name, ...hrefs}) => (
                         <div>
-                            <h5 className="text-2xl font-bold">{name}</h5>
+                            <SectionHeader>{name}</SectionHeader>
+                            <PictureBoxes {...hrefs} />
                         </div>
                     ))}
                 </div>
@@ -35,7 +40,7 @@ export default function Home() {
 }
 
 const people = [
-    {name: 'Mylie Rodrigo & Jazmin Rodrigo (2023, 2023)'},
-    {name: 'Cooper & Prince D (2009, 2023)'},
-    {name: 'Stefan & Damon Salvatore (1864, 2008)'}
+    {name: 'Mylie Rodrigo & Jazmin Rodrigo (2023, 2023)', beforeHref: '/placeholders/1.jpg', afterHref: '/placeholders/2.jpg'},
+    {name: 'Cooper & Prince D (2009, 2023)', beforeHref: '/placeholders/1.jpg', afterHref: '/placeholders/2.jpg'},
+    {name: 'Stefan & Damon Salvatore (1864, 2008)', beforeHref: '/placeholders/3.jpg', afterHref: '/placeholders/4.jpg'}
 ]
