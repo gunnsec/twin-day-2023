@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import {Inter} from 'next/font/google';
 import SectionHeader, {nameToId} from '@/components/SectionHeader';
 import PictureBoxes from '@/components/PictureBoxes';
@@ -8,6 +9,11 @@ const inter = Inter({subsets: ['latin']});
 export default function Home() {
     return (
         <main className={`container py-24 ${inter.className}`}>
+            <Head>
+                <title>Twin Day Photos 2023</title>
+                {/* TODO: description */}
+            </Head>
+
             <section className="text-center mb-10">
                 <h1 className="font-bold text-7xl text-center mb-4">Twin Day Photos</h1>
                 <h2 className="font-bold text-4xl text-center mb-6">[ 2023 ]</h2>
