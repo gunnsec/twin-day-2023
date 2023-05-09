@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        grapefruit: '#FF6347',
+      },
       container: {
         center: true,
         padding: {

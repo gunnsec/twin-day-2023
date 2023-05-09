@@ -20,7 +20,11 @@ export default function Home(props: {entries: Entry[]}) {
             <section className="text-center mb-10">
                 <h1 className="font-bold text-7xl text-center mb-4">Twin Day Photos</h1>
                 <h2 className="font-bold text-4xl text-center mb-6">[ 2023 ]</h2>
-                <p>Submit photos [...].</p>
+                <p>
+                    Recreate an old photo with your twin, sibling, or bestie and submit it to{' '}
+                    <a href="https://tinyurl.com/gunntwinday23" target="_blank" rel="noopener noreferrer" className="text-grapefruit hover:underline font-mono">tinyurl.com/gunntwinday23</a>{' '}
+                    to be featured on this page!
+                </p>
             </section>
 
             <section className="border-t flex">
