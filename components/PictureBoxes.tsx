@@ -39,7 +39,7 @@ function ImageBox(props: {src: string, onClick?: MouseEventHandler<HTMLImageElem
         <img
             src={props.src}
             onClick={props.onClick}
-            className="w-1/2 object-cover rounded-lg border hover:border-gray-600 transition duration-200 cursor-pointer"
+            className="w-1/2 object-cover rounded-lg border hover:border-gray-600 transition duration-200 cursor-pointer max-h-96"
         />
     )
 }
